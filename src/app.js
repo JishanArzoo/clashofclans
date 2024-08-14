@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
 
 //Routes Declaration
 
-app.use("api/v1/users", userRouter)
+app.use("/api/v1/users", userRouter)
 
 
 export {app}
