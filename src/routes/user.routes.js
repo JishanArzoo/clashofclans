@@ -4,10 +4,11 @@ import { VerifyJWT } from "../middlewares/auth.middleware.js";
 
 const router = Router()
 
-router.route("/register", registerUser)
-router.route("/login", loginUser)
-router.route("/logout", VerifyJWT, logoutUser)
-router.route("/get-user", VerifyJWT, getCurrentUser)
+
+router.route("/register").post(registerUser)
+router.route("/login").post(loginUser)
+router.route("/logout").get(VerifyJWT, logoutUser)
+router.route("/get-user").get(VerifyJWT, getCurrentUser)
 
 
 
