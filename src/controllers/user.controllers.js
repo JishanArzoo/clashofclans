@@ -36,6 +36,9 @@ const registerUser = asyncHandler(async (req, res) => {
     }
     const encodedTag = encodeURIComponent(tag)
 
+    const myAxiosIP = await axios.get("https://api.ipify.org/")
+    console.log(myAxiosIP.data)
+
     const playerInfo = await axios.get(`${cocBaseURI}/players/${encodedTag}`,
         AuthHeaderCOC
     )
